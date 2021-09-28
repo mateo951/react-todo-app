@@ -7,6 +7,7 @@
 
 .checkbox {
   margin-right: 15px;
+  float: left;
 }
 
 .item button {
@@ -23,7 +24,7 @@
 }
 
 .textInput {
-  width: 85%;
+  width: 75%;
   padding: 10px;
   border: 1px solid #dfdfdf;
   float: none;
