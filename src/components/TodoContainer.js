@@ -5,14 +5,12 @@ import InputTodo from './InputTodo';
 import TodosList from './TodosList';
 
 function getInitialTodos() {
-  // getting stored items
   const temp = localStorage.getItem('todos');
   const savedTodos = JSON.parse(temp);
   return savedTodos || [];
 }
 
 const TodoContainer = () => {
-  // const [todos, setTodos] = useState([]);
   const [todos, setTodos] = useState(getInitialTodos());
 
   const handleChange = (id) => {

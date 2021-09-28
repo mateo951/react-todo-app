@@ -1,10 +1,5 @@
-/* eslint-disable no-console */
-/* eslint-disable no-use-before-define */
-/* eslint-disable prefer-const */
-/* eslint-disable react/forbid-prop-types */
-/* eslint-disable react/prop-types */
-
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 import styles from './TodoItem.module.css';
 
 const TodoItem = (props) => {
@@ -25,7 +20,7 @@ const TodoItem = (props) => {
     } else if (event.target.type === 'button') {
       setEditing(false);
     }
-  }
+  };
 
   const completedStyle = {
     fontStyle: 'italic',
@@ -34,8 +29,8 @@ const TodoItem = (props) => {
     textDecoration: 'line-through',
   };
 
-  let viewMode = {};
-  let editMode = {};
+  const viewMode = {};
+  const editMode = {};
 
   if (editing) {
     viewMode.display = 'none';
@@ -45,7 +40,6 @@ const TodoItem = (props) => {
 
   return (
     <li className={styles.item}>
-
       <input
         type="checkbox"
         className={styles.checkbox}
@@ -70,6 +64,13 @@ const TodoItem = (props) => {
       />
     </li>
   );
+};
+
+TodoItem.propTypes = {
+  todo: PropTypes.string.isRequired,
+  handleChangeProps: PropTypes.func.isRequired,
+  deleteTodoProps: PropTypes.func.isRequired,
+  setUpdate: PropTypes.func.isRequired,
 };
 
 export default TodoItem;
